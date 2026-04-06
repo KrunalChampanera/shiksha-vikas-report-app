@@ -10,10 +10,5 @@ export default function App() {
     setLoggedIn(true);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("auth");
-    setLoggedIn(false);
-  };
-
-  return loggedIn ? <ProjectReport onLogout={handleLogout} /> : <Login onLogin={handleLogin} />;
+  return loggedIn ? <ProjectReport /> : <Login onLogin={handleLogin} />;
 }
