@@ -294,7 +294,7 @@ function BudgetBar({ pct, color, visible }) {
   );
 }
 
-export default function ProjectReport({ onLogout }) {
+export default function ProjectReport() {
   const [activeNav, setActiveNav] = useState("Summary");
   const [budgetVisible, setBudgetVisible] = useState(false);
   const budgetRef = useRef(null);
@@ -336,32 +336,24 @@ export default function ProjectReport({ onLogout }) {
         background: "linear-gradient(135deg, #0D3B8E 0%, #1565C0 55%, #1976D2 100%)",
         boxShadow: "0 4px 24px rgba(13,59,142,0.3)"
       }}>
-        <div style={{ maxWidth: 1140, margin: "0 auto", padding: "14px 24px", display: "flex", alignItems: "center", gap: 16 }}>
+        <div style={{ maxWidth: 1140, margin: "0 auto", padding: "12px 24px", display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{
-            width: 40, height: 40, borderRadius: 10,
+            width: 38, height: 38, borderRadius: 10, flexShrink: 0,
             background: "rgba(255,255,255,0.18)", border: "1px solid rgba(255,255,255,0.3)",
-            display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0
+            display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18,
           }}>🏫</div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", letterSpacing: 0.8, textTransform: "uppercase" }}>
+          <div style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
+            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.65)", letterSpacing: 0.8, textTransform: "uppercase", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
               {ORG}
             </div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: "#fff", fontFamily: "'Playfair Display', serif" }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "#fff", fontFamily: "'Playfair Display', serif", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
               {PROJECT}
             </div>
           </div>
           <div style={{ textAlign: "right", flexShrink: 0 }}>
-            <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", fontFamily: "'Playfair Display', serif" }}>₹34,50,000</div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)" }}>24 Months</div>
+            <div style={{ fontSize: 16, fontWeight: 700, color: "#fff", fontFamily: "'Playfair Display', serif" }}>₹34,50,000</div>
+            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.7)" }}>24 Months</div>
           </div>
-          {onLogout && (
-            <button
-              onClick={onLogout}
-              style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff", borderRadius: 8, padding: "7px 16px", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", flexShrink: 0, transition: "background 0.2s" }}
-              onMouseEnter={e => e.target.style.background = "rgba(255,255,255,0.25)"}
-              onMouseLeave={e => e.target.style.background = "rgba(255,255,255,0.15)"}
-            >🚪 Logout</button>
-          )}
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)", overflowX: "auto" }}>
           <div style={{ display: "flex", maxWidth: 1140, margin: "0 auto", padding: "0 24px" }}>
