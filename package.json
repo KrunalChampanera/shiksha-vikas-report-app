@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@vercel/analytics": "^2.0.1",
+=======
+>>>>>>> 2d4b8f341547b4ee3b9630ecd040a534ae54814f
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -24,4 +27,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "vite": "^5.0.8"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2d4b8f341547b4ee3b9630ecd040a534ae54814f
