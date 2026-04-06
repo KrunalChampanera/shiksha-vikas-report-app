@@ -300,7 +300,7 @@ function BudgetBar({ pct, color, visible }) {
   );
 }
 
-export default function ProjectReport() {
+export default function ProjectReport({ onLogout }) {
   const [activeNav, setActiveNav] = useState("Summary");
   const [budgetVisible, setBudgetVisible] = useState(false);
   const budgetRef = useRef(null);
@@ -361,6 +361,10 @@ export default function ProjectReport() {
             <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", fontFamily: "'Playfair Display', serif" }}>₹34,50,000</div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)" }}>24 Months</div>
           </div>
+          <button onClick={onLogout} style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff", borderRadius: 8, padding: "7px 16px", fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", flexShrink: 0, transition: "background 0.2s" }}
+            onMouseEnter={e => e.target.style.background = "rgba(255,255,255,0.25)"}
+            onMouseLeave={e => e.target.style.background = "rgba(255,255,255,0.15)"}
+          >🚪 Logout</button>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)", overflowX: "auto" }}>
           <div style={{ display: "flex", maxWidth: 1140, margin: "0 auto", padding: "0 24px" }}>
